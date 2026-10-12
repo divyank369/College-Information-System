@@ -1,57 +1,42 @@
-#  College Information System(CIS)
+# College Information System
 
-The College Information System(CIS) is a Go program that manages and stores information about students, teachers, and staff in a university. The data is stored in a JSON file named university.json.
+A command-line Go program for storing and browsing a university's student, teacher, and staff records. The application persists its data in the local `university.json` file.
 
 ## Features
 
-- Add student details including name, course, branch, age, and CGPA.
-- Add teacher details including name, subject, position, and home city.
-- Add staff details including name, max salary, and home city.
-- View university details, including lists of students, teachers, and staff.
-- Search for specific details such as students by name, teachers by subject, and staff by city.
+- Add student records with course, branch, age, and CGPA
+- Add teacher records with subject, position, and home city
+- Add staff records with salary and home city
+- Display stored university records
+- Search students by name, teachers by subject, and staff by city
 
-## Usage
+## Requirements
 
-1. _Add Student:_
+- Go
 
-   - Select option 1 and provide the required details for the student.
+## Run
 
-2. _Add Teacher:_
+From the repository root:
 
-   - Select option 2 and provide the required details for the teacher.
+```bash
+go run main.go
+```
 
-3. _Add Staff:_
+The program displays a numbered menu. Choose an option to add, view, or search records, or choose `6` to exit.
 
-   - Select option 3 and provide the required details for the staff.
+## Data File
 
-4. _View Details:_
+The application reads and writes `university.json` relative to the current working directory. Keep a backup of this file if its contents are important. The checked-in JSON file is the initial dataset.
 
-   - Select option 4 to view the details of all students, teachers, and staff.
+## Project Structure
 
-5. _Search Details:_
+```text
+.
+├── main.go
+├── university.json
+└── README.md
+```
 
-   - Select option 5 to search for specific details based on the type (students, teachers, staff).
-     - For students, you can search by name.
-     - For teachers, you can search by subject.
-     - For staff, you can search by city.
+## Limitations
 
-6. _Exit:_
-   - Select option 6 to exit the program.
-
-## How to Run
-
-1. Ensure you have Go installed on your machine.
-2. Clone the repository.
-3. Run the main.go file using the command: go run main.go
-
-## Data Storage
-
-The program uses a JSON file named university.json to persistently store the university's data.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Thank you for using the College Detail System!
+This is a local, single-process command-line application. It does not provide a network API, user accounts, or multi-user data storage.
